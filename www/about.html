@@ -1,24 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>About</title>
-</head>
-<body>
-<div data-role="page">
-
-  <div data-role="header">
-    <h1>ABOUT</h1>
-  </div>
-
-  <div data-role="main" class="ui-content">
-    <a href="index.html">Return the the home page</a>
-  </div>
-
-  <div data-role="footer">
-    <h1>Footer Text</h1>
-  </div>
-
-</div>
-</body>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <title>About</title>
+    </head>
+    <body>
+        <div class="app">
+            <h1>About</h1>
+            <div id="deviceready" class="blink">
+                <p class="event listening">This is the about page</p>
+                <p class="event received">I have just made my first mobile application</p>
+                <p>I'm now a pro</p>
+                <a href="about.html">Return to home</a>
+            </div>
+        </div>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript">
+            app.initialize();
+        </script>
+    </body>
 </html>
