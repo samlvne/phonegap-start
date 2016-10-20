@@ -17,22 +17,52 @@
                 <p class="event listening">This is the about page</p>
                 <p class="event received">I have just made my first mobile application</p>
                 <p>I'm now a pro</p>
-                <h2>Key: <span id="key"></span></h2>
-                <h2>Value: <span id="value"></span></h2>
-                <h2>Length: <span id="length"></span></h2>
+
+                <h2>Chocolate Bar: Oreo</h2>
+                <p>Fat: <span id="fat"></span></p>
+                <p>Protien: <span id="protien"></span></p>
+                <p>Carbs: <span id="carbs"></span></p>
+
+                <p>Length: <span id="length"></span></p>
+
                 <a href="index.html">Return to home</a>
             </div>
         </div>
         <script type="text/javascript">
-            
-            var key = 'PEN';
-            var value = 'BLACK';
-            var length = window.localStorage.length;
-            window.localStorage.setItem(key, value);
 
-            $(function() {          
-                $("#key").text(key);
-                $("#value").text(value);
+            var oreo = {
+                "fat": "35.5g",
+                "protien": "6g",
+                "carbs": {
+                    "allcarbs": "53.5g",
+                    "sugars": "48.5g"
+                }
+            }
+
+            var chocbar = JSON.stringify(oreo);
+            window.localStorage.setItem('fat', chocbar);
+            window.localStorage.setItem('protien', chocbar);
+            window.localStorage.setItem('carbs', chocbar);
+
+            var getFat = window.localStorage.getItem('fat');
+            var getProtien = window.localStorage.getItem('protien');
+            var getCarbs = window.localStorage.getItem('carbs');
+ 
+            var chocFat = JSON.parse(getFat);
+            var chocProtien = JSON.parse(getProtien);
+            var chocCarbs = JSON.parse(getCarbs);
+
+            var fat = chocFat.fat;
+            var protien = chocProtien.protien;
+            var carbs = chocCarbs.carbs.allcarbs;
+            var sugars = chocCarbs.carbs.sugars;
+
+            var length = window.localStorage.length;
+            
+            $(function(){          
+                $("#fat").text(fat);
+                $("#protien").text(protien);
+                $("#carbs").text(carbs + " of which sugars: " + sugars);
                 $("#length").text(length);
             });
 
